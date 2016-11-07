@@ -1,0 +1,23 @@
+{
+  "name": "grabme",
+  "private": true,
+  "description": "Grab Me",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smutnyleszek/grabme.git"
+  },
+  "author": "Leszek Pietrzak",
+  "license": "CC-BY-4.0",
+  "bugs": {
+    "url": "https://github.com/smutnyleszek/grabme/issues",
+    "email": "smutnyleszek@gmail.com"
+  },
+  "homepage": "https://grabme.uk",
+  "scripts": {
+    "jekyll:build": "jekyll build",
+    "jekyll:serve": "jekyll serve --watch --baseurl ''"
+  },
+  "watch": {},
+  "devDependencies": {},
+  "dependencies": {}
+}
