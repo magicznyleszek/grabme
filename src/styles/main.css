@@ -1,0 +1,14 @@
+/* -----------------------------------------------------------------------------
+main styles aggregation
+----------------------------------------------------------------------------- */
+
+@import "config.css";
+@import "setup/typography.css";
+@import "setup/states.css";
+@import "setup/root.css";
+@import "modules/card.css";
+@import "modules/column.css";
+@import "modules/inlineblock.css";
+@import "modules/section.css";
+@import "modules/symbol.css";
+@import "modules/text.css";

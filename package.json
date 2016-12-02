@@ -14,10 +14,32 @@
   },
   "homepage": "https://grabme.uk",
   "scripts": {
-    "jekyll:build": "jekyll build",
-    "jekyll:serve": "jekyll serve --watch --baseurl ''"
+    "build": "npm-run-all dist_rest svg_build styles_build svg_copy_pattern",
+    "watch": "npm-watch",
+    "dist_rest": "rm -rf dist && mkdir dist",
+    "styles_build": "postcss -u postcss-import -u postcss-cssnext -o dist/grabme.css src/styles/main.css",
+    "svg_build": "svgo -f src/symbols/ && svgshelf -p symbol- src/symbols/\\*.svg _includes/symbols.svg",
+    "svg_copy_pattern": "cp src/symbols/pattern.svg dist/pattern.svg",
+    "jekyll_build": "jekyll build",
+    "jekyll_serve": "jekyll serve --watch --baseurl ''"
   },
-  "watch": {},
-  "devDependencies": {},
+  "watch": {
+    "styles_build": {
+      "patterns": ["src/styles/"],
+      "extensions": "css",
+      "quiet": true
+    }
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.5.3",
+    "npm-run-all": "^3.1.2",
+    "npm-watch": "^0.1.6",
+    "postcss": "^5.2.6",
+    "postcss-cli": "^2.6.0",
+    "postcss-cssnext": "^2.9.0",
+    "postcss-import": "^8.2.0",
+    "svgo": "^0.7.1",
+    "svgshelf": "^1.0.3"
+  },
   "dependencies": {}
 }

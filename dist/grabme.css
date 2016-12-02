@@ -1,0 +1,771 @@
+/* -----------------------------------------------------------------------------
+main styles aggregation
+----------------------------------------------------------------------------- */
+
+/* -----------------------------------------------------------------------------
+basics configuration
+----------------------------------------------------------------------------- */
+
+/* Root line height is being used in many places throughout the project.
+It is recommended to keep all vertical margins and heights of elements to match
+the leading. Use caution when adding borders or when using vertical-align middle
+as they tend to add unwanted pixels, thus braking the flow. */
+
+:root {
+    /* colors */
+
+    /* root typography with font sizes for different screens scaling */
+
+    /* reusable stuff */
+}
+
+/* -----------------------------------------------------------------------------
+custom media queries and selectors
+----------------------------------------------------------------------------- */
+
+/* -----------------------------------------------------------------------------
+base typographic rules
+----------------------------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+h1:not(:last-child),
+h2:not(:last-child),
+h3:not(:last-child),
+h4:not(:last-child),
+p:not(:last-child),
+ul:not(:last-child),
+ol:not(:last-child),
+blockquote:not(:last-child),
+pre:not(:last-child) {
+    margin-top: 0;
+    margin-bottom: 27px;
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: 54px;
+    font-size: 3rem;
+}
+
+h2 {
+    padding-top: 9px;
+    padding-top: 0.5rem;
+    padding-bottom: 9px;
+    padding-bottom: 0.5rem;
+    font-size: 36px;
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 27px;
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: inherit;
+    font-weight: 700;
+}
+
+p,
+pre {
+    margin: 0;
+}
+
+ul,
+ol {
+    margin-left: 27px;
+    margin-left: 1.5rem;
+    padding: 0;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+small,
+sub,
+sup {
+    font-size: 75%;
+}
+
+sub,
+sup {
+    position: relative;
+    vertical-align: baseline;
+    line-height: 0;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+strong {
+    font-weight: 700;
+}
+
+em {
+    font-style: italic;
+}
+
+blockquote {
+    margin-right: 0;
+    margin-left: 0;
+    padding-left: 27px;
+    padding-left: 1.5rem;
+    box-shadow: inset 1px 0 0 0 hsl(0, 0%, 80%);
+    font-style: italic;
+}
+
+blockquote cite::before {
+    display: inline-block;
+    margin-right: 9px;
+    margin-right: 0.5rem;
+    content: '\2014';
+}
+
+code {
+    display: inline-block;
+    border-radius: 0.125rem;
+    background-color: hsl(0, 0%, 80%);
+    padding-right: 4.5px;
+    padding-right: 0.25rem;
+    padding-left: 4.5px;
+    padding-left: 0.25rem;
+    vertical-align: bottom;
+    line-height: 27px;
+    line-height: 1.5rem;
+    color: hsl(0, 0%, 20%);
+    font-family: monospace;
+    font-size: 13.5px;
+    font-size: 0.75rem;
+}
+
+pre code {
+    display: block;
+    max-width: 100%;
+    overflow: auto;
+}
+
+/* form elements */
+
+button,
+input,
+select,
+textarea {
+    color: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+}
+
+/* -----------------------------------------------------------------------------
+user-action influenced states
+----------------------------------------------------------------------------- */
+
+/* links */
+
+a {
+    text-decoration: underline;
+    color: inherit;
+}
+
+a:visited {
+    color: inherit;
+}
+
+a:hover {
+    color: hsl(340, 70%, 60%);
+    text-decoration: none;
+}
+
+a:active {
+    color: hsl(160, 80%, 40%);
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+button:focus,
+input:focus {
+    outline-width: 4.5px;
+    outline-width: 0.25rem;
+    outline-style: auto;
+    outline-color: hsl(0, 0%, 80%);
+}
+
+/* text selection */
+
+::-moz-selection {
+    background-color: hsl(0, 0%, 80%);
+    color: hsl(0, 0%, 100%);
+}
+
+::selection {
+    background-color: hsl(0, 0%, 80%);
+    color: hsl(0, 0%, 100%);
+}
+
+/* disabled elements */
+
+[disabled] {
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+}
+
+/* avoid adding up opacity on nested disabled elements */
+
+[disabled] [disabled] {
+    opacity: 1;
+}
+
+/* -----------------------------------------------------------------------------
+root stuff and normalizations
+----------------------------------------------------------------------------- */
+
+html {
+    box-sizing: border-box;
+    min-height: 100%;
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 20%);
+    font-family: "Asap", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+}
+
+/* clever page scaling with root font size changes */
+
+@media (min-width: 1536px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 720px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+@-webkit-keyframes rootAnimation {
+    0% {
+        background-color: hsl(340, 70%, 60%);
+        background-position-x: 600px;
+        background-position-y: 0;
+    }
+
+    50% {
+        background-color: hsl(160, 80%, 40%);
+    }
+
+    100% {
+        background-color: hsl(340, 70%, 60%);
+        background-position-x: 0;
+        background-position-y: 1000px;
+    }
+}
+
+@keyframes rootAnimation {
+    0% {
+        background-color: hsl(340, 70%, 60%);
+        background-position-x: 600px;
+        background-position-y: 0;
+    }
+
+    50% {
+        background-color: hsl(160, 80%, 40%);
+    }
+
+    100% {
+        background-color: hsl(340, 70%, 60%);
+        background-position-x: 0;
+        background-position-y: 1000px;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 54px 27px;
+    padding: 3rem 1.5rem;
+    width: 100%;
+    background-image: url("pattern.svg");
+    background-repeat: repeat;
+    -webkit-animation-name: rootAnimation;
+            animation-name: rootAnimation;
+    -webkit-animation-duration: 40s;
+            animation-duration: 40s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+    -webkit-animation-play-state: running;
+            animation-play-state: running;
+    -webkit-animation-direction: normal;
+            animation-direction: normal;
+    -webkit-animation-fill-mode: none;
+            animation-fill-mode: none;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+}
+
+/* -----------------------------------------------------------------------------
+card module
+----------------------------------------------------------------------------- */
+
+[i-card] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0.1875rem;
+    padding: 27px;
+    padding: 1.5rem;
+    max-width: 675px;
+    max-width: 37.5rem;
+    background-color: hsl(0, 0%, 100%);
+}
+
+/* -----------------------------------------------------------------------------
+col module
+----------------------------------------------------------------------------- */
+
+/* Remember to truncate the whitespace between columns! */
+
+[i-column] {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+}
+
+/* vertical aligning columns */
+
+[i-column~="top"] {
+    vertical-align: top;
+}
+
+[i-column~="middle"] {
+    vertical-align: middle;
+}
+
+[i-column~="bottom"] {
+    vertical-align: bottom;
+}
+
+/* -----------------------------------------------------------------------------
+columns
+----------------------------------------------------------------------------- */
+
+[i-column~="1/2"] {
+    width: 50%;
+}
+
+[i-column~="1/3"] {
+    width: 33.33333%;
+}
+
+[i-column~="2/3"] {
+    width: 66.66667%;
+}
+
+[i-column~="1/4"] {
+    width: 25%;
+}
+
+[i-column~="3/4"] {
+    width: 75%;
+}
+
+@media (min-width: 1536px) {
+    [i-column~="b-1/2"] {
+        width: 50%;
+    }
+
+    [i-column~="b-1/3"] {
+        width: 33.33333%;
+    }
+
+    [i-column~="b-2/3"] {
+        width: 66.66667%;
+    }
+
+    [i-column~="b-1/4"] {
+        width: 25%;
+    }
+
+    [i-column~="b-3/4"] {
+        width: 75%;
+    }
+}
+
+@media (min-width: 721px) and (max-width: 1535px) {
+    [i-column~="m-1/2"] {
+        width: 50%;
+    }
+
+    [i-column~="m-1/3"] {
+        width: 33.33333%;
+    }
+
+    [i-column~="m-2/3"] {
+        width: 66.66667%;
+    }
+
+    [i-column~="m-1/4"] {
+        width: 25%;
+    }
+
+    [i-column~="m-3/4"] {
+        width: 75%;
+    }
+}
+
+@media (max-width: 720px) {
+    [i-column~="s-1/2"] {
+        width: 50%;
+    }
+
+    [i-column~="s-1/3"] {
+        width: 33.33333%;
+    }
+
+    [i-column~="s-2/3"] {
+        width: 66.66667%;
+    }
+
+    [i-column~="s-1/4"] {
+        width: 25%;
+    }
+
+    [i-column~="s-3/4"] {
+        width: 75%;
+    }
+}
+
+/* -----------------------------------------------------------------------------
+space before column
+----------------------------------------------------------------------------- */
+
+[i-column-before~="1/2"] {
+    margin-left: 50%;
+}
+
+[i-column-before~="1/3"] {
+    margin-left: 33.33333%;
+}
+
+[i-column-before~="2/3"] {
+    margin-left: 66.66667%;
+}
+
+[i-column-before~="1/4"] {
+    margin-left: 25%;
+}
+
+[i-column-before~="3/4"] {
+    margin-left: 75%;
+}
+
+@media (min-width: 1536px) {
+    [i-column-before~="b-1/2"] {
+        margin-left: 50%;
+    }
+
+    [i-column-before~="b-1/3"] {
+        margin-left: 33.33333%;
+    }
+
+    [i-column-before~="b-2/3"] {
+        margin-left: 66.66667%;
+    }
+
+    [i-column-before~="b-1/4"] {
+        margin-left: 25%;
+    }
+
+    [i-column-before~="b-3/4"] {
+        margin-left: 75%;
+    }
+
+}
+
+@media (min-width: 721px) and (max-width: 1535px) {
+    [i-column-before~="m-1/2"] {
+        margin-left: 50%;
+    }
+
+    [i-column-before~="m-1/3"] {
+        margin-left: 33.33333%;
+    }
+
+    [i-column-before~="m-2/3"] {
+        margin-left: 66.66667%;
+    }
+
+    [i-column-before~="m-1/4"] {
+        margin-left: 25%;
+    }
+
+    [i-column-before~="m-3/4"] {
+        margin-left: 75%;
+    }
+
+}
+
+@media (max-width: 720px) {
+    [i-column-before~="s-1/2"] {
+        margin-left: 50%;
+    }
+
+    [i-column-before~="s-1/3"] {
+        margin-left: 33.33333%;
+    }
+
+    [i-column-before~="s-2/3"] {
+        margin-left: 66.66667%;
+    }
+
+    [i-column-before~="s-1/4"] {
+        margin-left: 25%;
+    }
+
+    [i-column-before~="s-3/4"] {
+        margin-left: 75%;
+    }
+
+}
+
+/* -----------------------------------------------------------------------------
+space after column
+----------------------------------------------------------------------------- */
+
+[i-column-after~="1/2"] {
+    margin-right: 50%;
+}
+
+[i-column-after~="1/3"] {
+    margin-right: 33.33333%;
+}
+
+[i-column-after~="2/3"] {
+    margin-right: 66.66667%;
+}
+
+[i-column-after~="1/4"] {
+    margin-right: 25%;
+}
+
+[i-column-after~="3/4"] {
+    margin-right: 75%;
+}
+
+@media (min-width: 1536px) {
+    [i-column-after~="b-1/2"] {
+        margin-right: 50%;
+    }
+
+    [i-column-after~="b-1/3"] {
+        margin-right: 33.33333%;
+    }
+
+    [i-column-after~="b-2/3"] {
+        margin-right: 66.66667%;
+    }
+
+    [i-column-after~="b-1/4"] {
+        margin-right: 25%;
+    }
+
+    [i-column-after~="b-3/4"] {
+        margin-right: 75%;
+    }
+}
+
+@media (min-width: 721px) and (max-width: 1535px) {
+    [i-column-after~="m-1/2"] {
+        margin-right: 50%;
+    }
+
+    [i-column-after~="m-1/3"] {
+        margin-right: 33.33333%;
+    }
+
+    [i-column-after~="m-2/3"] {
+        margin-right: 66.66667%;
+    }
+
+    [i-column-after~="m-1/4"] {
+        margin-right: 25%;
+    }
+
+    [i-column-after~="m-3/4"] {
+        margin-right: 75%;
+    }
+}
+
+@media (max-width: 720px) {
+    [i-column-after~="s-1/2"] {
+        margin-right: 50%;
+    }
+
+    [i-column-after~="s-1/3"] {
+        margin-right: 33.33333%;
+    }
+
+    [i-column-after~="s-2/3"] {
+        margin-right: 66.66667%;
+    }
+
+    [i-column-after~="s-1/4"] {
+        margin-right: 25%;
+    }
+
+    [i-column-after~="s-3/4"] {
+        margin-right: 75%;
+    }
+}
+
+/* -----------------------------------------------------------------------------
+inlineblock module
+----------------------------------------------------------------------------- */
+
+[i-inlineblock] {
+    display: inline-block;
+}
+
+/* -----------------------------------------------------------------------------
+section module
+----------------------------------------------------------------------------- */
+
+[i-section]:not(:last-child) {
+    margin-bottom: 54px;
+    margin-bottom: 3rem;
+}
+
+[i-section~="main"]:not(:last-child) {
+    margin-bottom: 81px;
+    margin-bottom: 4.5rem;
+}
+
+/* -----------------------------------------------------------------------------
+symbol module
+----------------------------------------------------------------------------- */
+
+[i-symbol] {
+    display: inline-block;
+    vertical-align: middle;
+    width: 27px;
+    width: 1.5rem;
+    height: 27px;
+    height: 1.5rem;
+    color: inherit;
+    shape-rendering: geometricPrecision;
+    fill: currentColor;
+}
+
+/* bugfix for click target SVGElementInstance */
+
+[i-symbol] > * {
+    pointer-events: none;
+}
+
+[i-symbol~="big"] {
+    width: 54px;
+    width: 3rem;
+    height: 54px;
+    height: 3rem;
+}
+
+[i-symbol~="logo"] {
+    width: 225px;
+    width: 12.5rem;
+    height: 225px;
+    height: 12.5rem;
+}
+
+/* -----------------------------------------------------------------------------
+text module
+----------------------------------------------------------------------------- */
+
+/* aligns */
+
+[i-text~="lefted"] {
+    text-align: left;
+}
+
+[i-text~="righted"] {
+    text-align: right;
+}
+
+[i-text~="centered"] {
+    text-align: center;
+}
+
+[i-text~="justified"] {
+    text-align: justify;
+}
+
+/* weights */
+
+[i-text~="300"] {
+    font-weight: 300;
+}
+
+[i-text~="400"] {
+    font-weight: 400;
+}
+
+[i-text~="600"] {
+    font-weight: 600;
+}
+
+[i-text~="700"] {
+    font-weight: 700;
+}
+
+/* text transforms */
+
+[i-text~="uppercased"] {
+    text-transform: uppercase;
+}
+
+[i-text~="lowercased"] {
+    text-transform: lowercase;
+}
+
+[i-text~="untransformed"] {
+    text-transform: none;
+}
+
+/* trims text with an ellipsis */
+
+[i-text~="trimmed"] {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

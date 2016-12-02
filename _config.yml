@@ -1,6 +1,6 @@
 # description
-name: "grabme"
-description: "Grab Me"
+name: "Grab Me"
+description: "A contemporary, simple and convenient fast food based on Japanese authentic sushi"
 keywords: "rolls, seafood"
 author: "Leszek Pietrzak"
 
@@ -21,3 +21,5 @@ timezone: Europe/Warsaw
 exclude:
     - LICENSE
     - README.md
+    - src
+    - node_modules

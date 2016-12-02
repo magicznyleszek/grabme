@@ -1,0 +1,50 @@
+/* -----------------------------------------------------------------------------
+basics configuration
+----------------------------------------------------------------------------- */
+
+/* Root line height is being used in many places throughout the project.
+It is recommended to keep all vertical margins and heights of elements to match
+the leading. Use caution when adding borders or when using vertical-align middle
+as they tend to add unwanted pixels, thus braking the flow. */
+
+:root {
+    /* colors */
+    --c-white: hsl(0, 0%, 100%);
+    --c-silver: hsl(0, 0%, 80%);
+    --c-mint: hsl(160, 80%, 40%);
+    --c-salmon: hsl(340, 70%, 60%);
+    --c-charcoal: hsl(0, 0%, 20%);
+
+    /* root typography with font sizes for different screens scaling */
+    --rootFontWeight: 400;
+    --rootLineHeight: 1.5;
+    --rootFontFamily: "Asap", sans-serif;
+    --remContext: 16;
+    --rootFontSize: 18px;
+    --rootFontSizeSmaller: calc(var(--remContext) * 1px);
+    --rootFontSizeBigger: 20px;
+
+    --c-focus-outline: var(--c-silver);
+    --s-focus-outline: 0.25rem;
+
+    --selection-txt-c: var(--c-white);
+    --selection-bg-c: var(--c-silver);
+
+    /* reusable stuff */
+    --disabled-o: 0.5;
+    --leading: calc(var(--rootLineHeight) * 1rem);
+    --line-gr: linear-gradient(to left, currentColor 0%, currentColor 0%);
+    --s-line-gr: 1px;
+}
+
+/* -----------------------------------------------------------------------------
+custom media queries and selectors
+----------------------------------------------------------------------------- */
+
+@custom-media --bigger (min-width: 1536px);
+@custom-media --medium (min-width: 721px) and (max-width: 1535px);
+@custom-media --smaller (max-width: 720px);
+@custom-media --retina (min-resolution: 2dppx);
+@custom-selector :--headers h1, h2, h3, h4;
+@custom-selector :--textblocks h1, h2, h3, h4, p, ul, ol, blockquote, pre;
+@custom-selector :--formelements button, input, select, textarea;

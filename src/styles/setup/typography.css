@@ -1,0 +1,122 @@
+/* -----------------------------------------------------------------------------
+base typographic rules
+----------------------------------------------------------------------------- */
+
+:--headers {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+:--textblocks:not(:last-child) {
+    margin-top: 0;
+    margin-bottom: var(--leading);
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: inherit;
+    font-weight: 700;
+}
+
+p,
+pre {
+    margin: 0;
+}
+
+ul,
+ol {
+    margin-left: var(--leading);
+    padding: 0;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+small,
+sub,
+sup {
+    font-size: 75%;
+}
+
+sub,
+sup {
+    position: relative;
+    vertical-align: baseline;
+    line-height: 0;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+strong {
+    font-weight: 700;
+}
+
+em {
+    font-style: italic;
+}
+
+blockquote {
+    margin-right: 0;
+    margin-left: 0;
+    padding-left: var(--leading);
+    box-shadow: inset var(--s-line-gr) 0 0 0 var(--c-silver);
+    font-style: italic;
+}
+
+blockquote cite::before {
+    display: inline-block;
+    margin-right: 0.5rem;
+    content: '\2014';
+}
+
+code {
+    display: inline-block;
+    border-radius: 0.125rem;
+    background-color: var(--c-silver);
+    padding-right: 0.25rem;
+    padding-left: 0.25rem;
+    vertical-align: bottom;
+    line-height: var(--leading);
+    color: var(--c-charcoal);
+    font-family: monospace;
+    font-size: 0.75rem;
+}
+
+pre code {
+    display: block;
+    max-width: 100%;
+    overflow: auto;
+}
+
+/* form elements */
+:--formelements {
+    color: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+}

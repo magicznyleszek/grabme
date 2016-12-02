@@ -1,0 +1,33 @@
+/* -----------------------------------------------------------------------------
+symbol module
+----------------------------------------------------------------------------- */
+
+:root {
+    --s-symbol: var(--leading);
+    --s-symbol-big: calc(var(--leading) * 2);
+}
+
+[i-symbol] {
+    display: inline-block;
+    vertical-align: middle;
+    width: var(--s-symbol);
+    height: var(--s-symbol);
+    color: inherit;
+    shape-rendering: geometricPrecision;
+    fill: currentColor;
+}
+
+/* bugfix for click target SVGElementInstance */
+[i-symbol] > * {
+    pointer-events: none;
+}
+
+[i-symbol~="big"] {
+    width: var(--s-symbol-big);
+    height: var(--s-symbol-big);
+}
+
+[i-symbol~="logo"] {
+    width: calc(200 / var(--remContext) * 1rem);
+    height: calc(200 / var(--remContext) * 1rem);
+}

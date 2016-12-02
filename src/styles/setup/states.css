@@ -1,0 +1,54 @@
+/* -----------------------------------------------------------------------------
+user-action influenced states
+----------------------------------------------------------------------------- */
+
+/* links */
+
+a {
+    text-decoration: underline;
+    color: inherit;
+}
+
+a:visited {
+    color: inherit;
+}
+
+a:hover {
+    color: var(--c-salmon);
+    text-decoration: none;
+}
+
+a:active {
+    color: var(--c-mint);
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+button:focus,
+input:focus {
+    outline-width: var(--s-focus-outline);
+    outline-style: auto;
+    outline-color: var(--c-focus-outline);
+}
+
+/* text selection */
+::selection {
+    background-color: var(--selection-bg-c);
+    color: var(--selection-txt-c);
+}
+
+/* disabled elements */
+[disabled] {
+    opacity: var(--disabled-o);
+    cursor: default;
+    pointer-events: none;
+}
+
+/* avoid adding up opacity on nested disabled elements */
+[disabled] [disabled] {
+    opacity: 1;
+}

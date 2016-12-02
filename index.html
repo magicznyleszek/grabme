@@ -1,6 +1,36 @@
 ---
 layout: default
 ---
-<h1>Grab Me</h1>
 
-<marquee>Cześć, Dominika!</marquee>
+<div i-card>
+    <header i-section i-text="centered">
+        <a i-inlineblock href="{{ site.url }}">
+            <svg i-symbol="logo"><use xlink:href="#symbol-logo"></use></svg>
+        </a>
+    </header>
+
+    <section i-section>
+        <p><strong>Grab Me Handroll, coming to London!</strong></p>
+
+        <p>Handroll is a contemporary, simple and convenient fast food based on
+            Japanese authentic sushi. The idea of handroll origins from Australia,
+            where it got popular super fast -- mainly thanks to it's handy way of
+            serving, delicious taste and good price.</p>
+
+        <p><strong>A healthy snack or prefect for a quick lunch.</strong></p>
+
+        <p>There are already so many cheap foods out there: hamburgers, sandwiches,
+            pizza, etc. Handroll is the youngest addition to the bunch -- completely
+            hip and out of the ordinary. And the range of tasty sauces makes every
+            visit even more unique!</p>
+
+        <p>Full of best quality products and great alternative to regular wraps.
+            Come and try us, just grab and taste!</p>
+
+        <p i-text="centered"><strong>SOON SOON SOON</strong></p>
+    </section>
+
+    <footer i-section i-text="centered">
+        <small>{{ site.name }} &copy; {{ site.time | date: '%Y' }}</small>
+    </footer>
+</div>
