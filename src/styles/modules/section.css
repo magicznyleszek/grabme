@@ -2,10 +2,7 @@
 section module
 ----------------------------------------------------------------------------- */
 
-[i-section]:not(:last-child) {
+[i-section] {
+    margin-top: calc(var(--leading) * 2);
     margin-bottom: calc(var(--leading) * 2);
-}
-
-[i-section~="main"]:not(:last-child) {
-    margin-bottom: calc(var(--leading) * 3);
 }

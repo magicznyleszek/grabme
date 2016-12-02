@@ -4,10 +4,12 @@ card module
 
 [i-card] {
     display: block;
+    overflow: hidden;
     margin-left: auto;
     margin-right: auto;
     border-radius: calc(3 / var(--remContext) * 1rem);
-    padding: var(--leading);
+    padding-left: var(--leading);
+    padding-right: var(--leading);
     max-width: calc(600 / var(--remContext) * 1rem);
     background-color: var(--c-white);
 }

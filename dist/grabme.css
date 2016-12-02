@@ -277,7 +277,7 @@ html {
 @-webkit-keyframes rootAnimation {
     0% {
         background-color: hsl(340, 70%, 60%);
-        background-position-x: 600px;
+        background-position-x: 1200px;
         background-position-y: 0;
     }
 
@@ -288,14 +288,14 @@ html {
     100% {
         background-color: hsl(340, 70%, 60%);
         background-position-x: 0;
-        background-position-y: 1000px;
+        background-position-y: 2000px;
     }
 }
 
 @keyframes rootAnimation {
     0% {
         background-color: hsl(340, 70%, 60%);
-        background-position-x: 600px;
+        background-position-x: 1200px;
         background-position-y: 0;
     }
 
@@ -306,7 +306,7 @@ html {
     100% {
         background-color: hsl(340, 70%, 60%);
         background-position-x: 0;
-        background-position-y: 1000px;
+        background-position-y: 2000px;
     }
 }
 
@@ -341,11 +341,14 @@ card module
 
 [i-card] {
     display: block;
+    overflow: hidden;
     margin-left: auto;
     margin-right: auto;
     border-radius: 0.1875rem;
-    padding: 27px;
-    padding: 1.5rem;
+    padding-left: 27px;
+    padding-left: 1.5rem;
+    padding-right: 27px;
+    padding-right: 1.5rem;
     max-width: 675px;
     max-width: 37.5rem;
     background-color: hsl(0, 0%, 100%);
@@ -662,14 +665,11 @@ inlineblock module
 section module
 ----------------------------------------------------------------------------- */
 
-[i-section]:not(:last-child) {
+[i-section] {
+    margin-top: 54px;
+    margin-top: 3rem;
     margin-bottom: 54px;
     margin-bottom: 3rem;
-}
-
-[i-section~="main"]:not(:last-child) {
-    margin-bottom: 81px;
-    margin-bottom: 4.5rem;
 }
 
 /* -----------------------------------------------------------------------------
