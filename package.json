@@ -14,12 +14,13 @@
   },
   "homepage": "https://grabme.uk",
   "scripts": {
-    "build": "npm-run-all dist_rest svg_build styles_build svg_copy_pattern",
+    "build": "npm-run-all dist_reset svg_build styles_build svg_copy_pattern images_copy",
     "watch": "npm-watch",
-    "dist_rest": "rm -rf dist && mkdir dist",
+    "dist_reset": "rm -rf dist && mkdir dist",
     "styles_build": "postcss -u postcss-import -u postcss-cssnext -o dist/grabme.css src/styles/main.css",
     "svg_build": "svgo -f src/symbols/ && svgshelf -p symbol- src/symbols/\\*.svg _includes/symbols.svg",
     "svg_copy_pattern": "cp src/symbols/pattern.svg dist/pattern.svg",
+    "images_copy": "cp -a src/images dist",
     "jekyll_build": "jekyll build",
     "jekyll_serve": "jekyll serve --watch --baseurl ''"
   },
